@@ -9,5 +9,5 @@ package com.mycompany.jogodetabuleiro;
  * @author Usuario
  */
 public class JogadorSortudo {
-    
+
 }

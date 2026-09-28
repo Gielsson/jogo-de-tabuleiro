@@ -1,27 +1,25 @@
-
 package com.mycompany.jogodetabuleiro;
-import java.util.Random;
-
-public class Dados {
-    private int dado1;
-        private int dado2;
-    private Random random = new Random();
-
-    public void rolar() {
-        dado1 = random.nextInt(6) + 1;
-        dado2 = random.nextInt(6) + 1;
+import java.util.List;
+ 
+public class Jogo {
+    private List<Jogador> jogadores;
+    private Tabuleiro tabuleiro;
+    private Dados dados;
+    private Jogador vencedor;
+ 
+    public Jogo(List<Jogador> jogadores) {
+        this.jogadores = jogadores;
+        this.tabuleiro = new Tabuleiro();
+        this.dados = new Dados();
     }
-
-    public int getDado1() { 
-        return dado1; 
+ 
+    public List<Jogador> getJogadores() {
+        return jogadores;
     }
-    public int getDado2() { 
-        return dado2;
+ 
+    public void substituirJogador(Jogador antigo, Jogador novo) {
+        int indice = jogadores.indexOf(antigo);
+        jogadores.set(indice, novo);
     }
-    public int getSoma() {
-        return dado1 + dado2;
-    }
-    public boolean saoIguais() { 
-        return dado1 == dado2;
-    }
+   
 }

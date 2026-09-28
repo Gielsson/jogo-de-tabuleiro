@@ -49,4 +49,15 @@ public abstract class Jogador {
     public void voltarAoInicio() {
         posicao = 0; 
     }
+    protected Jogador(Jogador outro) {
+    this.cor = outro.cor;
+    this.posicao = outro.posicao;
+    this.jogadas = outro.jogadas;
+    this.perdeProximaRodada = outro.perdeProximaRodada;
 }
+
+public boolean recebeBonusDaSorte() {
+    return true;
+}
+}
+

@@ -1,16 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.jogodetabuleiro;
 
-/**
- *
- * @author Usuario
- */
-public class Jogodetabuleiro {
+import java.util.ArrayList;
+import java.util.List;
 
+public class Jogodetabuleiro {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        List<Jogador> jogadores = new ArrayList<>();
+        jogadores.add(new JogadorNormal());
+        jogadores.add(new JogadorAzarado());
+
+        Jogo jogo = new Jogo(jogadores);
+        jogo.iniciar();
     }
 }

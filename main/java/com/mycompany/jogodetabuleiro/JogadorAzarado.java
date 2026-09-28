@@ -9,5 +9,8 @@ package com.mycompany.jogodetabuleiro;
  * @author Usuario
  */
 public class JogadorAzarado {
+public boolean recebeBonusDaSorte() {
+    return false;
+}
     
 }
