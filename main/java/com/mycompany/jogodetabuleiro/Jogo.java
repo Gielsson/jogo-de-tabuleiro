@@ -1,13 +1,27 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.mycompany.jogodetabuleiro;
 
-/**
- *
- * @author Usuario
- */
-public class Jogo {
-    
+package com.mycompany.jogodetabuleiro;
+import java.util.Random;
+
+public class Dados {
+    private int dado1;
+        private int dado2;
+    private Random random = new Random();
+
+    public void rolar() {
+        dado1 = random.nextInt(6) + 1;
+        dado2 = random.nextInt(6) + 1;
+    }
+
+    public int getDado1() { 
+        return dado1; 
+    }
+    public int getDado2() { 
+        return dado2;
+    }
+    public int getSoma() {
+        return dado1 + dado2;
+    }
+    public boolean saoIguais() { 
+        return dado1 == dado2;
+    }
 }
