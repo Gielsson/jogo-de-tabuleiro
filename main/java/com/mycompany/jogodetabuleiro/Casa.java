@@ -1,13 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.jogodetabuleiro;
 
-/**
- *
- * @author Usuario
- */
-public class Casa {
-    
+public abstract class Casa {
+	
+	    private final int numero;
+	    
+	    public Casa(int numero) {
+	        this.numero = numero;
+	    }
+
+	    public int getNumero() {
+	        return numero;
+	    }
+
+	  
+	public abstract void executarEfeito(Jogo jogo, Jogador jogador);
+	
 }
