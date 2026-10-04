@@ -2,11 +2,11 @@ package com.mycompany.jogodetabuleiro;
 
 import java.util.Scanner;
 
-// Leitura do teclado num lugar so (varios Scanner no System.in dao problema)
+// Leitura do teclado num lugar so 
 public class Entrada {
     private static Scanner scanner = new Scanner(System.in);
 
-    // Pede um numero entre min e max, repetindo ate o usuario acertar
+    //pede um numero entre min e max, repetindo ate o usuario acertar
     public static int lerInt(String mensagem, int min, int max) {
         while (true) {
             System.out.print(mensagem);
