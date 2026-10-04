@@ -13,3 +13,4 @@ public class CasaPerdeRodada extends Casa{
 	        jogador.perderProximaRodada();
 	    }
 	}
+

@@ -1,4 +1,5 @@
 package com.mycompany.jogodetabuleiro;
+
 public class CasaSorte extends Casa {
 
     private static final int AVANCO = 3;
@@ -7,7 +8,6 @@ public class CasaSorte extends Casa {
         super(numero);
     }
 
-    
     
     public void executarEfeito(Jogo jogo, Jogador jogador) {
         if (!jogador.recebeBonusDaSorte()) {

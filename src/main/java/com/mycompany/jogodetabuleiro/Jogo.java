@@ -8,13 +8,12 @@ public class Jogo {
 
     private List<Jogador> jogadores;
     private Tabuleiro tabuleiro;
-    private Dados dados;
+    private FonteDeMovimento fonteDeMovimento = new MovimentoPorDados();
     private Jogador vencedor; // fica null ate alguem ganhar
 
     public Jogo(List<Jogador> jogadores) {
         this.jogadores = jogadores;
         this.tabuleiro = new Tabuleiro();
-        this.dados = new Dados();
         this.vencedor = null;
     }
 
@@ -29,6 +28,11 @@ public class Jogo {
                 jogadores.set(i, novo);
             }
         }
+    }
+
+    // Troca a forma como o jogador se move: dados normais ou Modo Debug (digitar a casa de destino)
+    public void ativarModoDebug() {
+        fonteDeMovimento = new MovimentoDebug();
     }
 
     // Repete rodadas ate aparecer um vencedor
@@ -68,12 +72,10 @@ public class Jogo {
 
             Entrada.esperarEnter("  Pressione Enter para jogar os dados...");
 
-            // Cada tipo de jogador rola do seu jeito (normal, sortudo, azarado)
-            jogador.rolarDados(dados);
-            jogador.contarJogada();
-            jogador.setPosicao(jogador.getPosicao() + dados.getSoma());
-            System.out.println("  Dado: " + dados.getDado1() + " e " + dados.getDado2()
-                    + " (soma " + dados.getSoma() + ") -> casa " + jogador.getPosicao());
+            // A fonte de movimento decide o destino (dados normais ou casa digitada no Modo Debug)
+            int destino = fonteDeMovimento.obterDestino(jogador);
+            jogador.setPosicao(destino);
+            System.out.println("  -> casa " + jogador.getPosicao());
 
             // Chegou ao fim com os dados vitoria
             if (jogador.getPosicao() >= CASA_FINAL) {
@@ -92,7 +94,8 @@ public class Jogo {
             }
 
             // Dados iguais joga de novo, a nao ser que tenha caido em casa de perder rodada
-            if (dados.saoIguais() && !jogador.isPerdeProximaRodada()) {
+            // (no Modo Debug nunca sai dados iguais, entao essa regra nao se aplica)
+            if (fonteDeMovimento.saiuDadosIguais() && !jogador.isPerdeProximaRodada()) {
                 System.out.println("  Dados iguais! " + jogador.getCor() + " joga de novo.");
                 jogaDeNovo = true;
             }

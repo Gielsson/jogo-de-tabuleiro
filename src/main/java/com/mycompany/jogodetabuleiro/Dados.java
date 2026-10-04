@@ -1,16 +1,11 @@
-package com.mycompany.jogodetabuleiro;
 
+package com.mycompany.jogodetabuleiro;
 import java.util.Random;
 
 public class Dados {
-
     private int dado1;
-    private int dado2;
-   private final Random random;
-
-    public Dados() {
-        this.random = new Random();
-    }
+        private int dado2;
+    private Random random = new Random();
 
     public void rolar() {
         dado1 = random.nextInt(6) + 1;
@@ -29,5 +24,4 @@ public class Dados {
     public boolean saoIguais() { 
         return dado1 == dado2;
     }
-    
 }
