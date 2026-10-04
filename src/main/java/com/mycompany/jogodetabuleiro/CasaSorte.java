@@ -8,7 +8,7 @@ public class CasaSorte extends Casa {
     }
 
     
-    @Override
+    
     public void executarEfeito(Jogo jogo, Jogador jogador) {
         if (!jogador.recebeBonusDaSorte()) {
             System.out.println(jogador.getCor()
