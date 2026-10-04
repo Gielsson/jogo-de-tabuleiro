@@ -4,7 +4,7 @@ public class MovimentoPorDados implements FonteDeMovimento {
 
     private final Dados dados = new Dados();
 
-    @Override
+    
     public int obterDestino(Jogador jogador) {
         jogador.rolarDados(dados);
         System.out.println("  Dado: " + dados.getDado1() + " e " + dados.getDado2()
