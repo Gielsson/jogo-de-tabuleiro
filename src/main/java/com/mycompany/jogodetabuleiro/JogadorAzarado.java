@@ -1,5 +1,6 @@
 package com.mycompany.jogodetabuleiro;
 
+// jog azarado: a soma dos dados eh sempre 6 ou menos
 public class JogadorAzarado extends Jogador {
 
     public JogadorAzarado(String cor) {
@@ -21,7 +22,7 @@ public class JogadorAzarado extends Jogador {
         return "Azarado";
     }
 
-    // o jog azarado nao aproveita a casa da sorte
+    // Azarado nao aproveita a casa da sorte (a CasaSorte consulta isso)
     public boolean recebeBonusDaSorte() {
         return false;
     }
