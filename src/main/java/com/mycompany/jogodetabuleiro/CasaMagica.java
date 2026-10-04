@@ -15,7 +15,7 @@ public class CasaMagica extends Casa {
             }
         }
 
-        // Se ele ja e o ultimo (ou empatado com o ultimo), nao sai do lugar
+        // se ele ja eh o ultimo ou empatado com o ultimo, nao sai do lugar
         if (jogador.getPosicao() <= ultimo.getPosicao()) {
             System.out.println(jogador.getCor() + " caiu na casa magica, mas ja e o ultimo."
                     + " Fica onde esta.");
