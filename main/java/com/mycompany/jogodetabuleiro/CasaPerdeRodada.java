@@ -1,13 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.jogodetabuleiro;
 
-/**
- *
- * @author Usuario
- */
-public class CasaPerdeRodada {
-    
-}
+public class CasaPerdeRodada extends Casa{
+
+
+	    public CasaPerdeRodada(int numero) {
+	        super(numero);
+	    }
+
+	    public void executarEfeito(Jogo jogo, Jogador jogador) {
+	        System.out.println(jogador.getCor() + " caiu na casa " + getNumero()
+	                + " e perde a próxima rodada!");
+	        jogador.perderProximaRodada();
+	    }
+	}

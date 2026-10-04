@@ -1,13 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.jogodetabuleiro;
 
-/**
- *
- * @author Usuario
- */
-public class JogadorNormal {
-    
+public class JogadorNormal extends Jogador {
+
+    public JogadorNormal(String cor) {
+        super(cor);
+    }
+
+    // Usado na casa surpresa: vira Normal mantendo cor, posicao e jogadas
+    public JogadorNormal(Jogador outro) {
+        super(outro);
+    }
+
+    public void rolarDados(Dados dados) {
+        dados.rolar();
+    }
+
+    public String getTipo() {
+        return "Normal";
+    }
 }

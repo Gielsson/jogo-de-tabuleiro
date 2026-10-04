@@ -1,13 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.jogodetabuleiro;
 
-/**
- *
- * @author Usuario
- */
-public class JogadorSortudo {
+public class JogadorSortudo extends Jogador {
 
+    public JogadorSortudo(String cor) {
+        super(cor);
+    }
+
+    public JogadorSortudo(Jogador outro) {
+        super(outro);
+    }
+
+    // Rola de novo ate a soma ser >= 7
+    public void rolarDados(Dados dados) {
+        do {
+            dados.rolar();
+        } while (dados.getSoma() < 7);
+    }
+
+    public String getTipo() {
+        return "Sortudo";
+    }
 }
