@@ -1,5 +1,6 @@
 package com.mycompany.jogodetabuleiro;
 
+// Jogador sortudo: a soma dos dados e sempre 7 ou mais
 public class JogadorSortudo extends Jogador {
 
     public JogadorSortudo(String cor) {
