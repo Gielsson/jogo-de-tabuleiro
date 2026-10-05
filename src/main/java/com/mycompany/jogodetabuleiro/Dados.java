@@ -8,6 +8,7 @@ public class Dados {
     private Random random = new Random();
 
     public void rolar() {
+        //Atribui um valor aleatório de 1 a 6 a cada um dos dados
         dado1 = random.nextInt(6) + 1;
         dado2 = random.nextInt(6) + 1;
     }
