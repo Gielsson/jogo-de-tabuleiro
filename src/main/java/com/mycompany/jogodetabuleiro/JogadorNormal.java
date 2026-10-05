@@ -7,7 +7,8 @@ public class JogadorNormal extends Jogador {
         super(cor); // manda a cor para a classe Jogador guardar
     }
 
-    // Usado na casa surpresa: vira Normal mantendo cor, posicao e jogadas
+    // Usado na casa surpresa: vira Normal mantendo cor, 
+    //posicao, jogadas e estado de penalização
     public JogadorNormal(Jogador outro) {
         super(outro);
     }
