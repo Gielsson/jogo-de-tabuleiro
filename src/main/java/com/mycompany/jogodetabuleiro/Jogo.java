@@ -12,7 +12,7 @@ public class Jogo {
     private Jogador vencedor; // fica null ate alguem ganhar
 
     public Jogo(List<Jogador> jogadores) {
-        this.jogadores = jogadores;
+        this.jogadores = jogadores; //guarda a lista de jogadores
         this.tabuleiro = new Tabuleiro();
         this.vencedor = null;
     }
@@ -23,7 +23,7 @@ public class Jogo {
 
     // Troca um jogador por outro na lista, usado quando o tipo do jogador muda na casa surpresa
     public void substituirJogador(Jogador antigo, Jogador novo) {
-        for (int i = 0; i < jogadores.size(); i++) {
+        for (int i = 0; i < jogadores.size(); i++) { //size ve quantos jogadores paticipam
             if (jogadores.get(i) == antigo) {
                 jogadores.set(i, novo);
             }
@@ -83,7 +83,7 @@ public class Jogo {
                 return;
             }
 
-            // Executa o efeito da casa onde caiu,cada casa faz o seu
+            // buscao objeto da casa correspondente a posição atual e Executa o efeito da casa onde caiu
             tabuleiro.getCasa(jogador.getPosicao()).executarEfeito(this, jogador);
 
             // O efeito da casa, ex: sorte, +3, pode ter levado o jogador ate o fim
