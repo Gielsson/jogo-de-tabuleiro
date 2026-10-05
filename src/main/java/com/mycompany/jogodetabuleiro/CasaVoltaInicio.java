@@ -11,6 +11,8 @@ public class CasaVoltaInicio extends Casa {
     @Override
     public void executarEfeito(Jogo jogo, Jogador jogador) {
         List<Jogador> jogadores = jogo.getJogadores();
+        //Vai buscar todos os participantes ativos no
+        //tabuleiro para sabermos quem está em jogo
 
         System.out.println(jogador.getCor() + " caiu na casa " + getNumero()
                 + " e escolhe quem volta ao início.");
