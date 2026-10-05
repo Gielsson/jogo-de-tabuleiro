@@ -2,11 +2,11 @@ package com.mycompany.jogodetabuleiro;
 
 // jog azarado: a soma dos dados eh sempre 6 ou menos
 public class JogadorAzarado extends Jogador {
-
+//inicializa a cor e o estado inicial
     public JogadorAzarado(String cor) {
         super(cor);
     }
-
+//vem da classe mae e clona um jogador existente
     public JogadorAzarado(Jogador outro) {
         super(outro);
     }
