@@ -6,10 +6,11 @@ public abstract class Jogador {
     private int jogadas;
     private boolean perdeProximaRodada;
 
+    //executado para que sempre que m jogador novo for criado, configure seu estado inicial 
     public Jogador(String cor) {
-        this.cor = cor;
+        this.cor = cor; //guarda a cor escolhida pelo jogador
         this.posicao = 0;
-        this.jogadas = 0;
+        this.jogadas = 0; //inicializa cm zero
         this.perdeProximaRodada = false;
     }
 
@@ -21,23 +22,25 @@ public abstract class Jogador {
         return cor; 
     }
     public int getPosicao() { 
-        return posicao; 
+        return posicao; // le a casa atual
     }
     public void setPosicao(int posicao) { 
-        this.posicao = posicao; 
+        this.posicao = posicao; //atualiza a posição quando jog avança no tab
     }
     public int getJogadas() { 
-        return jogadas;
+        return jogadas; //consulta quantas jogadas o jog ja fez
     }
     public void contarJogada() {
         jogadas++; 
     }
 
     public void perderProximaRodada() { 
-        perdeProximaRodada = true; 
+        perdeProximaRodada = true;
+        //indica que o jogador caiu em uma casa de penalização
     }
     public boolean isPerdeProximaRodada() { 
         return perdeProximaRodada;
+        //retorna true ou false para saber se o jog deve passar a vez
     }
     public void cancelarPerdaDeRodada() { 
         perdeProximaRodada = false;
@@ -46,7 +49,9 @@ public abstract class Jogador {
     public void voltarAoInicio() {
         posicao = 0; 
     }
-    protected Jogador(Jogador outro) {
+    //recebe outro objeto jogador como parametro e clona tds os seus atributos 
+    //para um novo objeto
+    protected Jogador(Jogador outro) { 
     this.cor = outro.cor;
     this.posicao = outro.posicao;
     this.jogadas = outro.jogadas;
