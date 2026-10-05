@@ -14,6 +14,8 @@ public class Menu {
 
         // repete ate a escolha ser valida,pelo menos 2 tipos diferentes
         while (true) {
+            //Cria uma nova lista vazia onde os jogadores 
+            //recém-criados serão guardados temporariamente a cada tentativa.
             List<Jogador> jogadores = new ArrayList<>();
             List<String> coresLivres = new ArrayList<>(Arrays.asList(CORES));
 
